@@ -4,52 +4,14 @@
 {% endblock %}
 {% block body %}
 	<!-- start navigation -->
-	<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
-		<div class="container">
-			<div class="row">
-				<div class="navbar-header">
-					<button class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-						<span class="icon icon-bar"></span>
-						<span class="icon icon-bar"></span>
-						<span class="icon icon-bar"></span>
-					</button>
-					<a href="#" class="navbar-brand">
-						<h3>CRYSTAL</h3>
-					</a>
-				</div>
-				<div class="collapse navbar-collapse">
-					<ul class="nav navbar-nav navbar-right">
-						<li>
-							<a href="#home" class="smoothScroll">HOME</a>
-						</li>
-						<li>
-							<a href="#about" class="smoothScroll">STUDIO</a>
-						</li>
-						<li>
-							<a href="#team" class="smoothScroll">TEAM</a>
-						</li>
-						<li>
-							<a href="#service" class="smoothScroll">SERVICES</a>
-						</li>
-						<li>
-							<a href="#work" class="smoothScroll">WORK</a>
-						</li>
-						<li>
-							<a href="#pricing" class="smoothScroll">PRICING</a>
-						</li>
-						<li>
-							<a href="#contact" class="smoothScroll">CONTACT</a>
-						</li>
-					</ul>
-				</div>
-			</div>
-		</div>
-	</nav>
+	{% include ('navbar.html.twig') %}
+	<!-- this generates the error -->
+
+
 	<!-- end navigation -->
 
 	<!-- start home -->
-	<section id="home" class="text-center">
-		<div class="templatemo_headerimage">
+		<section id="home" class="text-center"> <div class="templatemo_headerimage">
 			<div class="flexslider">
 				<ul class="slides">
 					<li>
@@ -62,7 +24,8 @@
 									<span class="rotate">fully responsive business one page, clean design and easy to customize</span>
 								</h2>
 								<p>it is built on html5, css3, bootstrap, and much more!</p>
-								<a href="#work" class="smoothScroll btn btn-default wow fadeInDown" data-wow-delay="2000">Our Work</a>
+								<a href="/login" class="smoothScroll btn btn-default wow fadeInDown" data-wow-delay="2000">Login</a>
+
 							</div>
 						</div>
 					</li>
@@ -76,7 +39,8 @@
 									<span class="rotate">work on all modern browsers, Works on IE 10+</span>
 								</h2>
 								<p>see caniuse.com for browser compatibility information</p>
-								<a href="#about" class="smoothScroll btn btn-default wow fadeInDown" data-wow-delay="2000">See about us</a>
+								<a href="/register" class="smoothScroll btn btn-default wow fadeInDown" data-wow-delay="2000">Register</a>
+
 							</div>
 						</div>
 					</li>
