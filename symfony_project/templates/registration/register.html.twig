@@ -1,10 +1,22 @@
-{# templates/registration/register.html.twig #}
+{% extends 'base-login-register.html.twig' %}
 
-{{ form_start(form) }}
-    {{ form_row(form.username) }}
-    {{ form_row(form.email) }}
-    {{ form_row(form.plainPassword.first) }}
-    {{ form_row(form.plainPassword.second) }}
+{% block title %}Log in!
+{% endblock %}
+{% block body %}
+    {% include ('navbar.html.twig') %}
 
-    <button type="submit">Register!</button>
-{{ form_end(form) }}
+    {# templates/registration/register.html.twig #}
+
+    {{ form_start(form) }}
+
+    {{ form_row(form.username) }}<br>
+    {{ form_row(form.email) }}<br>
+    {{ form_row(form.plainPassword.first) }}<br>
+    {{ form_row(form.plainPassword.second) }}<br>
+<br>
+    <button class="btn btn-lg btn-primary" type="submit">Register!</button>
+    {{ form_end(form) }}
+
+
+
+{% endblock %}
