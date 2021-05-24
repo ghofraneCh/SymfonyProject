@@ -25,7 +25,7 @@ class LigneProduit
     private $produit;
 
     /**
-     * @ORM\ManyToMany(targetEntity=commande::class, inversedBy="ligneProduits")
+     * @ORM\ManyToMany(targetEntity=Commande::class, inversedBy="ligneProduits")
      */
     private $commande;
 

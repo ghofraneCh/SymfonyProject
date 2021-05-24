@@ -17,7 +17,7 @@ class WelcomeController extends AbstractController
     public function index(Request $request, PaginatorInterface $paginator)
     {
 
-        $donnees = $this->getDoctrine()->getRepository(Produit::class)->findBy([],['created_at' => 'desc']);
+        $donnees = $this->getDoctrine()->getRepository(Produit::class)->findBy([],['TypeProduit' => 'desc']);
 
         $produit = $paginator->paginate(
             $donnees,

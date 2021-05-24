@@ -23,7 +23,7 @@ class Livraison
     private $dateLivraison;
 
     /**
-     * @ORM\OneToOne(targetEntity=commande::class, cascade={"persist", "remove"})
+     * @ORM\OneToOne(targetEntity=Commande::class, cascade={"persist", "remove"})
      */
     private $commande;
 

@@ -30,7 +30,7 @@ class Commande
     private $ligneProduits;
 
     /**
-     * @ORM\OneToOne(targetEntity=facture::class, cascade={"persist", "remove"})
+     * @ORM\OneToOne(targetEntity=Facture::class, cascade={"persist", "remove"})
      */
     private $facture;
 
