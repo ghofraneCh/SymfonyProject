@@ -5,9 +5,6 @@
 {% block body %}
 	<!-- start navigation -->
 	{% include ('navbar.html.twig') %}
-	<!-- this generates the error -->
-
-
 	<!-- end navigation -->
 
 	<!-- start home -->
@@ -76,98 +73,22 @@
 					<p>Mauris mattis vitae libero eget iaculis. Donec et augue quis quam porttitor consectetur ut nec sem. Integer sagittis viverra quam quis ultricies. Aenean risus nisl, consequat at nunc id, tincidunt tristique mauris.</p>
 				</div>
 				<div class="col-md-2"></div>
+				{% for prod in produit %}
 				<div class="col-sm-6 col-md-3 wow fadeInLet" data-wow-delay="2000">
 					<div class="team_thumb">
 						<img src="welcome-page-resources/images/team-img-1.jpg" class="img-responsive" alt="team">
 
 						<div class="team_overlay">
-							<ul class="social_icon">
-								<li>
-									<a href="#" class="fa fa-facebook"></a>
-								</li>
-								<li>
-									<a href="#" class="fa fa-twitter"></a>
-								</li>
-								<li>
-									<a href="#" class="fa fa-pinterest"></a>
-								</li>
-							</ul>
+							<a href="details/{{ prod.id }}" >Details</a>
 						</div>
 					</div>
 					<div class="team_description">
-						<h4>TRACY</h4>
-						<h5>DESIGNER</h5>
-					</div>
-				</div>
-				<div class="col-sm-6 col-md-3 wow fadeInUp" data-wow-delay="2000">
-					<div class="team_thumb">
-						<img src="welcome-page-resources/images/team-img-2.jpg" class="img-responsive" alt="team">
 
-						<div class="team_overlay">
-							<ul class="social_icon">
-								<li>
-									<a href="#" class="fa fa-facebook"></a>
-								</li>
-								<li>
-									<a href="#" class="fa fa-twitter"></a>
-								</li>
-								<li>
-									<a href="#" class="fa fa-pinterest"></a>
-								</li>
-							</ul>
-						</div>
-					</div>
-					<div class="team_description">
-						<h4>MARY</h4>
-						<h5>DEVELOPER</h5>
+						<h4>{{ prod.id }}</h4>
+						<h5>{{ prod.taille }}</h5>
 					</div>
 				</div>
-				<div class="col-sm-6 col-md-3 wow fadeInUp" data-wow-delay="2000">
-					<div class="team_thumb">
-						<img src="welcome-page-resources/images/team-img-3.jpg" class="img-responsive" alt="team">
-
-						<div class="team_overlay">
-							<ul class="social_icon">
-								<li>
-									<a href="#" class="fa fa-facebook"></a>
-								</li>
-								<li>
-									<a href="#" class="fa fa-twitter"></a>
-								</li>
-								<li>
-									<a href="#" class="fa fa-pinterest"></a>
-								</li>
-							</ul>
-						</div>
-					</div>
-					<div class="team_description">
-						<h4>JULIA</h4>
-						<h5>DIRECTOR</h5>
-					</div>
-				</div>
-				<div class="col-sm-6 col-md-3 wow fadeInRight" data-wow-delay="2000">
-					<div class="team_thumb">
-						<img src="welcome-page-resources/images/team-img-4.jpg" class="img-responsive" alt="team">
-
-						<div class="team_overlay">
-							<ul class="social_icon">
-								<li>
-									<a href="#" class="fa fa-facebook"></a>
-								</li>
-								<li>
-									<a href="#" class="fa fa-twitter"></a>
-								</li>
-								<li>
-									<a href="#" class="fa fa-pinterest"></a>
-								</li>
-							</ul>
-						</div>
-					</div>
-					<div class="team_description">
-						<h4>LINDA</h4>
-						<h5>MANAGER</h5>
-					</div>
-				</div>
+				{% endfor %}
 
 			</div>
 		</div>
