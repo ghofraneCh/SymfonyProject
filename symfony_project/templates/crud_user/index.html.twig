@@ -3,7 +3,9 @@
 {% block title %}User index{% endblock %}
 
 {% block body %}
-    <h1>User index</h1>
+	<!-- start navigation -->
+	{% include ('navbaradmin.html.twig') %}
+	<!-- this generates the error -->
 
     <table class="table">
         <thead>
@@ -11,22 +13,18 @@
                 <th>Id</th>
                 <th>Email</th>
                 <th>Username</th>
-                <th>Password</th>
-                <th>Roles</th>
                 <th>actions</th>
             </tr>
         </thead>
         <tbody>
+        
         {% for user in users %}
             <tr>
                 <td>{{ user.id }}</td>
                 <td>{{ user.email }}</td>
                 <td>{{ user.username }}</td>
-                <td>{{ user.password }}</td>
-                <td>{{ user.roles ? user.roles|join(', ') : '' }}</td>
                 <td>
-                    <a href="{{ path('crud_user_show', {'id': user.id}) }}">show</a>
-                    <a href="{{ path('crud_user_edit', {'id': user.id}) }}">edit</a>
+                    {{ include('crud_user/_delete_form.html.twig') }}
                 </td>
             </tr>
         {% else %}
@@ -37,5 +35,4 @@
         </tbody>
     </table>
 
-    <a href="{{ path('crud_user_new') }}">Create new</a>
 {% endblock %}

@@ -1,0 +1,45 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Produit index{% endblock %}
+
+{% block body %}
+ 
+	<!-- start navigation -->
+	{% include ('navbaradmin.html.twig') %}
+	<!-- this generates the error -->
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Taille</th>
+                <th>Couleur</th>
+                <th>Nom</th>
+                <th>Quantite</th>
+                <th>Prix</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for produit in produits %}
+            <tr>
+                <td>{{ produit.id }}</td>
+                <td>{{ produit.taille }}</td>
+                <td>{{ produit.Couleur }}</td>
+                <td>{{ produit.nom }}</td>
+                <td>{{ produit.quantite }}</td>
+                <td>{{ produit.prix }}</td>
+                <td>
+                    <a href="{{ path('crud_produit_show', {'id': produit.id}) }}">show</a>
+                    <a href="{{ path('crud_produit_edit', {'id': produit.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="7">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+<a href="{{ path('crud_produit_new') }}">Create new</a>
+{% endblock %}
