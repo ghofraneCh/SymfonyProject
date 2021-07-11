@@ -20,8 +20,7 @@ class Produit
     private $id;
 
     /**
-     * @ORM\ManyToOne(targetEntity=TypeProduit::class, inversedBy="taille")
-     * @ORM\JoinColumn(nullable=false)
+     * @ORM\Column(type="integer")
      */
     private $TypeProduit;
 
@@ -45,16 +44,15 @@ class Produit
      */
     private $quantite;
 
-    /**
-     * @ORM\ManyToMany(targetEntity=LigneProduit::class, mappedBy="produit")
-     */
-    private $produit;
 
     /**
      * @ORM\Column(type="float")
      */
     private $prix;
-
+    /**
+     * @ORM\ManyToMany(targetEntity=LigneProduit::class, mappedBy="produit")
+     */
+    private $produit;
     public function __construct()
     {
         $this->produit = new ArrayCollection();
@@ -65,12 +63,12 @@ class Produit
         return $this->id;
     }
 
-    public function getTypeProduit(): ?TypeProduit
+    public function getTypeProduit(): ?int
     {
         return $this->TypeProduit;
     }
 
-    public function setTypeProduit(?TypeProduit $TypeProduit): self
+    public function setTypeProduit(int $TypeProduit): self
     {
         $this->TypeProduit = $TypeProduit;
 

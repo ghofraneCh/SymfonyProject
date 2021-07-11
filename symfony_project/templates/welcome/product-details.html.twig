@@ -1,11 +1,37 @@
-{% extends 'base.html.twig'%}
-{% block title %}
-	Product Details
-{% endblock %}
-{% block body %}
-	<!-- start navigation -->
-	{% include ('navbar.html.twig') %}
-	<!-- end navigation -->
+{% extends 'base.html.twig' %}
 
-test
-	{% endblock %}
+{% block title %}commander produit{% endblock %}
+
+{% block body %}
+    <h1>commander {{ produit.nom }} </h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ produit.id }}</td>
+            </tr>
+            <tr>
+                <th>Taille</th>
+                <td>{{ produit.taille }}</td>
+            </tr>
+            <tr>
+                <th>Couleur</th>
+                <td>{{ produit.Couleur }}</td>
+            </tr>
+            <tr>
+                <th>Nom</th>
+                <td>{{ produit.nom }}</td>
+            </tr>
+            <tr>
+                <th>Prix</th>
+                <td>{{ produit.prix }}</td>
+            </tr>
+        </tbody>
+    </table>
+  
+    <a href="{{ path('commander', {'id': produit.id}) }}">   <h2>Commander</h2>  </a>
+    	<a href="/" class="navbar-brand">
+						<h3>Annuler</h3>
+					</a>
+{% endblock %}

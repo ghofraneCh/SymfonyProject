@@ -14,11 +14,19 @@ class homeController extends AbstractController
      */
     public function hello(): Response
     {
-        $number = random_int(0, 100);
+ 
+     // usually you'll want to make sure the user is authenticated first
+        $this->denyAccessUnlessGranted('IS_AUTHENTICATED_FULLY');
 
-        return new Response(
-            '<html><body>Lucky number: '.$number.'</body></html>'
-        );
+    // returns your User object, or null if the user is not authenticated
+    // use inline documentation to tell your editor your exact User class
+    /** @var \App\Entity\User $user */
+     $user = $this->getUser();
+
+    // Call whatever methods you've added to your User class
+    // For example, if you added a getFirstName() method, you can use that.
+    return new Response('Well hi there '.$user->getUsername());
+
     }
 
 }

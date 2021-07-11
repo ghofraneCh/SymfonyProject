@@ -12,6 +12,8 @@
             <tr>
                 <th>Id</th>
                 <th>DateCommande</th>
+                <th>IdProduit</th>
+                <th>IdUser</th>
                 <th>actions</th>
             </tr>
         </thead>
@@ -20,9 +22,10 @@
             <tr>
                 <td>{{ commande.id }}</td>
                 <td>{{ commande.dateCommande ? commande.dateCommande|date('Y-m-d') : '' }}</td>
-                <td>
-                    <a href="{{ path('crud_commande_show', {'id': commande.id}) }}">show</a>
-                    <a href="{{ path('crud_commande_edit', {'id': commande.id}) }}">edit</a>
+                <td>{{ commande.idProduit }}</td>
+                <td>{{ commande.idUser }}</td>
+                 <td>
+                    {{ include('crud_commande/_delete_form.html.twig') }}
                 </td>
             </tr>
         {% else %}

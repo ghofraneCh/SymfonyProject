@@ -14,5 +14,6 @@
 - php bin/console doctrine:schema:update --force
 * crud maker :
 - php bin/console make:crud
+php bin/console assets:install --symlink
 
 *************************************************

@@ -15,6 +15,14 @@
                 <th>DateCommande</th>
                 <td>{{ commande.dateCommande ? commande.dateCommande|date('Y-m-d') : '' }}</td>
             </tr>
+            <tr>
+                <th>IdProduit</th>
+                <td>{{ commande.idProduit }}</td>
+            </tr>
+            <tr>
+                <th>IdUser</th>
+                <td>{{ commande.idUser }}</td>
+            </tr>
         </tbody>
     </table>
 

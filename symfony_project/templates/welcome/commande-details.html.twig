@@ -1,0 +1,28 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Commande Created{% endblock %}
+
+{% block body %}
+    <h1>Commande</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ commande.id }}</td>
+            </tr>
+               <tr>
+                <th>IdProduit</th>
+                <td>{{ commande.idProduit }}</td>
+            </tr>
+            <tr>
+                <th>DateCommande</th>
+                <td>{{ commande.dateCommande ? commande.dateCommande|date('Y-m-d') : '' }}</td>
+            </tr>
+        </tbody>
+    </table>
+	<a href="/" class="navbar-brand">
+						<h3>Go Home</h3>
+					</a>
+
+{% endblock %}

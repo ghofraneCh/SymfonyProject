@@ -24,6 +24,16 @@ class Commande
      */
     private $dateCommande;
 
+      /**
+     * @ORM\Column(type="integer")
+     */
+    private $idProduit;
+
+     /**
+     * @ORM\Column(type="integer")
+     */
+    private $idUser;
+
     /**
      * @ORM\ManyToMany(targetEntity=LigneProduit::class, mappedBy="commande")
      */
@@ -42,6 +52,16 @@ class Commande
     public function getId(): ?int
     {
         return $this->id;
+    }
+
+    public function getIdProduit(): ?int
+    {
+        return $this->idProduit;
+    }
+
+    public function getIdUser(): ?int
+    {
+        return $this->idUser;
     }
 
     public function getDateCommande(): ?\DateTimeInterface
@@ -94,4 +114,17 @@ class Commande
 
         return $this;
     }
+
+    public function setIdProduit(?int $idproduit): self
+    {
+         $this->idProduit=$idproduit;
+         return $this ;
+    }
+
+    public function setIdUser(?int $idUser): self
+    {
+         $this->idUser=$idUser;
+         return $this ;
+    }
+
 }
